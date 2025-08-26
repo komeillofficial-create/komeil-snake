@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snake Game Pro</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🐍 Snake Neo – Touch Controls</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- WebApp تلگرام برای اجرای داخل بات -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div class="game-container">
-    <h1>🐍 مار نوکیا (نسخه خفن)</h1>
-    <div class="score-board">
-      امتیاز: <span id="score">0</span> | رکورد: <span id="highScore">0</span>
-    </div>
+  <div class="wrap">
+    <h1>🐍 Snake Neo</h1>
 
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-
-    <!-- دکمه‌های کنترل موبایلی -->
-    <div class="controls">
-      <button class="ctrl-btn" id="up">⬆️</button>
-      <div>
-        <button class="ctrl-btn" id="left">⬅️</button>
-        <button class="ctrl-btn" id="down">⬇️</button>
-        <button class="ctrl-btn" id="right">➡️</button>
+    <div class="toolbar">
+      <div class="scores">
+        <span id="score">امتیاز: 0</span>
+        <span id="highscore">رکورد: 0</span>
+      </div>
+      <div class="controls-top">
+        <button id="startBtn">شروع/ریستارت</button>
+        <button id="pauseBtn">⏸︎ توقف/ادامه</button>
+        <select id="skin">
+          <option value="neon" selected>Neon</option>
+          <option value="classic">Classic</option>
+          <option value="glass">Glass</option>
+        </select>
       </div>
     </div>
 
-    <div class="buttons">
-      <button id="startBtn">▶️ Start</button>
-      <button id="pauseBtn">⏸ Pause</button>
-      <button id="restartBtn">🔄 Restart</button>
+    <div class="stage">
+      <canvas id="game" width="420" height="420"></canvas>
     </div>
+
+    <!-- دکمه‌های بزرگ جهت برای موبایل -->
+    <div class="touch-pad">
+      <div class="row">
+        <button class="dir" id="btnUp">⬆️</button>
+      </div>
+      <div class="row">
+        <button class="dir" id="btnLeft">⬅️</button>
+        <button class="dir center" id="btnPause">⏯️</button>
+        <button class="dir" id="btnRight">➡️</button>
+      </div>
+      <div class="row">
+        <button class="dir" id="btnDown">⬇️</button>
+      </div>
+    </div>
+
+    <p class="hint">کیبورد: جهت‌ها/Space — موبایل: دکمه‌های بزرگ یا کشیدن انگشت</p>
   </div>
 
-  <script src="snake.js"></script>
+  <!-- صداها (اختیاری) -->
+  <audio id="eatSound" src="eat.mp3"></audio>
+  <audio id="gameOverSound" src="gameover.mp3"></audio>
+
   <script src="telegram-integration.js"></script>
+  <script src="snake.js"></script>
 </body>
 </html>
