@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🐍 Snake Neo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>🐍 Snake Neo</h1>
+
+    <div class="toolbar">
+      <div class="scores">
+        <span id="score">امتیاز: 0</span>
+        <span id="highscore">رکورد: 0</span>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn">شروع / ریستارت</button>
+        <button id="pauseBtn">⏸ توقف / ادامه</button>
+        <select id="skin">
+          <option value="neon" selected>Neon</option>
+          <option value="classic">Classic</option>
+          <option value="glass">Glass</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="stage">
+      <canvas id="game" width="420" height="420"></canvas>
+    </div>
+
+    <p class="hint">کلیدهای جهت‌نما یا کشیدن انگشت (Swipe) روی موبایل</p>
+  </div>
+
+  <audio id="eatSound" src="eat.mp3"></audio>
+  <audio id="gameOverSound" src="gameover.mp3"></audio>
+
+  <script src="telegram-integration.js"></script>
+  <script src="snake.js"></script>
+</body>
+</html>
